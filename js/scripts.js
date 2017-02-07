@@ -47,10 +47,129 @@ $(document).ready(function() {
 
     });
 
+    // ---------------------------------------------------------
 
-                // --------------------------------------------------------
+    $(function() {
+
+        $(".upl-btn_1").click(function() {
+
+            $("#upl-file_1").click();
+
+        });
+
+    });
 
 
+    $(function() {
+
+        var idexSizeBox;
+
+        $(".kitchen-sheme").click( function() {
+
+            // $(".kitchen-sheme .radio-btn").attr("checked", "");
+
+            // $(".kitchen-sheme .radio-btn").removeAttr('checked');
+
+            idexSizeBox = $(".kitchen-sheme").index(this);
+
+            // if( $(".kitchen-sheme:eq("+ idexSizeBox +")").hasClass("active") ) {
+
+            //     return false;
+
+            // } else {
+
+                // $(".kitchen-sheme").removeClass("active");
+
+                // $(".kitchen-sheme").removeClass("active");
+
+                // $(".kitchen-sheme .radio-btn").removeAttr('checked');
+
+                // $(".kitchen-sheme:eq("+ idexSizeBox +")").addClass("active");
+
+                $(".kitchen-sheme input.radio-btn").attr("checked", false);
+
+                // $(".kitchen-sheme:eq("+ idexSizeBox +") .radio-btn").attr("checked");
+
+                $(".kitchen-sheme:eq("+ idexSizeBox +") input.radio-btn").attr("checked", true);
+
+                $(this).addClass("active");
+
+            // }
+
+            // $(".kitchen-sheme").addClass("active");
+
+            // $(this).addClass("active");
+
+        });
+
+    });
+
+
+    $(document).mouseup(function (e){
+
+        hide_element = $(".size-inpt");
+
+        if (!hide_element.is(e.target)
+
+            && hide_element.has(e.target).length === 0) {
+
+            // hide_element.fadeOut(300);
+
+            $(".size-inpt").removeClass("active");
+        }
+
+    });
+
+    // ---------------------------------------------------------
+
+    $(function() {
+
+        var accordeonIndex;
+
+        accordeonItemCount = $(".accordeon-item").length - 1;
+
+        var parentAccordeonH;
+
+        $(".accordeon-item-h").click(function() {
+
+            parentAccordeonH = $(this).parent(".accordeon-item");
+
+            if( parentAccordeonH.hasClass("active") ) {
+
+                return false;
+
+            } else {
+
+                for( accordeonIndex = 0; accordeonIndex <= accordeonItemCount; accordeonIndex++) {
+
+                    if( $(".accordeon-item:eq("+ accordeonIndex +")").hasClass("active") ) {
+
+                        $(".accordeon-item:eq("+ accordeonIndex +") .accordeon-item-txt-wrapp").animate({"height" : 0 + "px"}, 300);
+
+                        $(".accordeon-item:eq("+ accordeonIndex +")").removeClass("active");
+
+                    }
+
+                }                
+
+                accordeonItemTxtHeight = $(this).next(".accordeon-item-txt-wrapp").children(".accordeon-item-txt").height();
+
+                $(this).next(".accordeon-item-txt-wrapp").animate({"height" : accordeonItemTxtHeight + "px"}, 300);
+
+                parentAccordeonH.addClass("active");
+
+            }
+
+        });
+
+    });
+
+    // -----------------------------------------------------------
+
+    
+
+
+    // ---------------------------------------------------------
 
         function getPromoSlideImgSize() {
 
@@ -112,12 +231,7 @@ $(document).ready(function() {
 
                 }
 
-                console.log("dsdsdd");
-
-
-            }, 500);
-
-                   
+            }, 500);                   
 
         }
 
