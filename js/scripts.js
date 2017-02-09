@@ -166,8 +166,93 @@ $(document).ready(function() {
 
     // -----------------------------------------------------------
 
-    
+    $(function() {
 
+        var tabsCont = $(".tabs").length - 1;
+
+        console.log(tabsCont);
+
+        var tabsIndex = 0;
+
+        var tabCount;
+        var tabIndex;
+
+        var tabAttr;
+
+        var activeTab;
+
+        // var tabContent;
+
+        for(tabsIndex = 0; tabsIndex <= tabsCont; tabsIndex++) {
+
+            activeTab = false;
+
+            tabCount = $(".tabs:eq("+ tabsIndex  +") .tab").length - 1;
+
+            for( tabIndex = 0; tabIndex <= tabCount; tabIndex++ ) {
+
+                if( $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ tabIndex +")").hasClass("active") ) {
+
+                    activeTab = true;
+
+                    tabAttr = $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ tabIndex +")").attr("data-tab-num");
+
+                    $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
+
+                    continue;
+
+                }
+
+            }
+
+            if(activeTab == false) {
+
+                $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ 0 +")").addClass("active");
+
+                tabAttr = $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ 0 +")").attr("data-tab-num");
+
+                $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
+
+                
+            }
+
+        }
+
+        $(".tab").click(function() {
+
+            if( $(this).hasClass("active") ) {
+
+                return true;
+
+            } else {
+
+                var tabBox = $(this).parent(".tab-box");
+
+                var tabsRow = tabBox.parent(".tabs-row");
+
+                var tabParent = tabsRow.parent(".tabs");
+
+                // tabsRow.css({"outline" : "3px solid red"});
+
+                var tabsIndex = tabParent.index();
+
+                console.log(tabParent.index());
+
+                $(".tabs:eq("+ (tabsIndex - 1) +") .tabs-row .tab").removeClass("active");
+
+                $(this).addClass("active");
+
+                tabAttr = $(this).attr("data-tab-num");
+
+                $(".tab-content").css({"display" : "none"});
+
+                $(".tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
+
+            }
+
+        });
+
+    });
 
     // ---------------------------------------------------------
 
