@@ -19,7 +19,7 @@
 			// 59.9711252,30.2972661
 			scrollwheel: false,
 			scaleControl: false,
-			zoom: 16
+			zoom: 13
 		});
 
 		marker = new google.maps.Marker({

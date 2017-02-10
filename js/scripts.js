@@ -254,6 +254,27 @@ $(document).ready(function() {
 
     });
 
+
+    // ---------------------------------------------------------
+
+    $(function() {
+
+        $(".img-material-box").click(function() {
+
+            $(this).prev("input").click();
+
+        });
+
+    })
+
+    // ---------------------------------------------------------
+
+    $(function() {
+
+        $(".contacts-slider-box").css({"top" : ( $(".map-box.contacts-page").height() - $(".contacts-slider-box").height() ) / 2 + "px"});
+
+    });
+
     // ---------------------------------------------------------
 
         function getPromoSlideImgSize() {
