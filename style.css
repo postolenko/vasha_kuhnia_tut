@@ -2291,6 +2291,7 @@ section.catalog-sect-2 {
     position: absolute;
     top: 33px;
     right: 5%;
+    z-index: 2;
     cursor: pointer;
     text-align: center;
     font-family: "Myriad Pro", Verdana, Arial, sans-serif;
