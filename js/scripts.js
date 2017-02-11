@@ -62,47 +62,52 @@ $(document).ready(function() {
 
     $(function() {
 
-        var idexSizeBox;
+        // var idexSizeBox;
+        var idexSheme;
+        var parentScheme;
+        var indexChooseBox;
 
-        $(".kitchen-sheme").click( function() {
+        $(".kitchen-sheme .radio-btn").click( function() {
 
-            // $(".kitchen-sheme .radio-btn").attr("checked", "");
+            idexSheme = $(".kitchen-sheme .radio-btn").index(this);
 
-            // $(".kitchen-sheme .radio-btn").removeAttr('checked');
+            parentScheme = $(".kitchen-sheme:eq("+ idexSheme +")").parent(".choose-box");
 
-            idexSizeBox = $(".kitchen-sheme").index(this);
+            indexChooseBox = parentScheme.index(".choose-box");
 
-            // if( $(".kitchen-sheme:eq("+ idexSizeBox +")").hasClass("active") ) {
+            $(".kitchen-sheme .size-inpt").prop("disabled", true);
 
-            //     return false;
+            $(".choose-box:eq("+ indexChooseBox +") .kitchen-sheme .size-inpt").val("");
 
-            // } else {
+            $(".kitchen-sheme:eq("+ idexSheme +") .size-inpt").prop("disabled", false);
 
-                // $(".kitchen-sheme").removeClass("active");
+        });
 
-                // $(".kitchen-sheme").removeClass("active");
 
-                // $(".kitchen-sheme .radio-btn").removeAttr('checked');
+        var regSize;
+        var sizeInputVal;
 
-                // $(".kitchen-sheme:eq("+ idexSizeBox +")").addClass("active");
 
-                $(".kitchen-sheme input.radio-btn").attr("checked", false);
+        $(".size-inpt").keyup(function() {
 
-                // $(".kitchen-sheme:eq("+ idexSizeBox +") .radio-btn").attr("checked");
+            regSize = /[0-9]+$/;
 
-                $(".kitchen-sheme:eq("+ idexSizeBox +") input.radio-btn").attr("checked", true);
+            sizeInputVal = $(this).val();
 
-                $(this).addClass("active");
+            if( regSize.exec( sizeInputVal ) != null ) {
 
-            // }
+                return true;
 
-            // $(".kitchen-sheme").addClass("active");
+            } else {
 
-            // $(this).addClass("active");
+                $(this).val( sizeInputVal.replace(/[^0-9]/gim,'') );
+
+            }
 
         });
 
     });
+
 
 
     $(document).mouseup(function (e){
@@ -232,13 +237,13 @@ $(document).ready(function() {
 
                 var tabParent = tabsRow.parent(".tabs");
 
-                // tabsRow.css({"outline" : "3px solid red"});
+                tabsRow.css({"outline" : "3px solid red"});
 
-                var tabsIndex = tabParent.index();
+                var tabsIndex = tabParent.index(this);
 
-                console.log(tabParent.index());
+                console.log(tabParent.index(this));
 
-                $(".tabs:eq("+ (tabsIndex - 1) +") .tabs-row .tab").removeClass("active");
+                $(".tabs:eq("+ (tabsIndex) +") .tabs-row .tab").removeClass("active");
 
                 $(this).addClass("active");
 

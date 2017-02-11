@@ -1719,7 +1719,7 @@ a:active {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-    background-position-y: 1px;
+    background-position-y: 4px;
 }
 
 .kitchen-sheme input[type=radio]:checked + label > .kitchen-sheme-icon {
@@ -1728,19 +1728,19 @@ a:active {
 }
 
 .kitchen-sheme-icon.icon-1 {
-    background-position-x: -18px;
+    background-position-x: -6px;
 }
 
 .kitchen-sheme-icon.icon-2 {
-    background-position-x: -89px;
+    background-position-x: -90px;
 }
 
 .kitchen-sheme-icon.icon-3 {
-    background-position-x: -172px;
+    background-position-x: -173px;
 }
 
 .kitchen-sheme input[type=radio]:checked + label > .kitchen-sheme-icon {
-    background-position-y: -34px;
+    background-position-y: -40px;
 }
 
 .size-inpt-box .size-inpt {
