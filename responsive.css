@@ -360,6 +360,21 @@
 	    margin-bottom: 33px;
 	}
 
+	.contact-tabs .tab-box .tab {
+	    min-height: 105px;
+	}
+
+	.contact-tabs .tab p.address {
+	    font-size: 13px;
+	    line-height: 18px;
+	}
+
+	.contact-tabs .tab .tel-link-tab {
+	    margin: 4px 0;
+	    font-size: 14px;
+	    line-height: 21px;
+	}
+
 	/*-- Footer --*/
 
 	
