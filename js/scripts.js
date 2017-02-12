@@ -12,6 +12,14 @@ $(document).ready(function() {
 
     // });
 
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+
+
+
     var promoSlideCount = $(".promo-slide").length - 1;
 
     var promoSlideCountIndex;
@@ -35,6 +43,17 @@ $(document).ready(function() {
         $(".wrapper").css({"padding-bottom" :  $(".footer").outerHeight(true) + "px"});
 
         getPromoSlideImgSize();
+
+        getScrollHeaderPosition();
+
+        bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+
+    });
+
+
+    $(document).scroll(function() {
+
+        getScrollHeaderPosition();
 
     });
 
@@ -294,6 +313,50 @@ $(document).ready(function() {
         $(".contacts-slider-box").css({"top" : ( $(".map-box.contacts-page").height() - $(".contacts-slider-box").height() ) / 2 + "px"});
 
     });
+
+    // --------------------------------------------------------
+
+    $(".respmenubtn").click(function() {
+
+        if( $(".resp-navigation").is(":hidden") ) {
+
+            $(this).addClass("respmenubtn-active");
+
+            $(".resp-navigation").fadeIn(200);
+
+            $(".resp-navigation").css({"top" : $(".header-top-row").outerHeight(true) + "px",
+                                "height" : ( $(window).height() - $(".header-top-row").outerHeight(true) ) + "px" });
+
+            // $(".header").addClass("fixed");
+
+        } else if( $(".resp-navigation").is(":visible") ){
+
+            $(this).removeClass("respmenubtn-active");
+
+            $(".resp-navigation").fadeOut(200);
+
+            // $(".header").removeClass("fixed");
+
+        }
+
+
+    });
+
+    // ---------------------------------------------------------
+
+    function getScrollHeaderPosition() {
+
+        if ( $(window).scrollTop() > $(".header").height() && bodyWidth <= 768 ) {
+
+            $(".header").addClass("fixed");
+
+        } else {
+
+            $(".header").removeClass("fixed");
+
+        }
+
+    }
 
     // ---------------------------------------------------------
 
