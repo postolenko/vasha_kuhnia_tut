@@ -749,6 +749,43 @@ a:active {
     background: rgba(255, 255, 255, 1);
 }
 
+.header.fixed {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, .8);
+}
+
+.respmenu-btn-box {
+    display: none;
+    width: 27%;
+}
+
+.respmenu-btn {
+    display: block;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 1);
+    border: 1px dashed #b0198f;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.respmenu-btn span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 5px auto;
+    background: rgba(51, 51, 51, 1);
+}
+
 .header-top-row {
     padding: 30px 0 20px 0;
 }
@@ -788,6 +825,8 @@ a:active {
     width: 100%;
     cursor: pointer;
     max-width: 273px;
+    position: relative;
+    z-index: 12;
 }
 
 .logo-img {
@@ -1088,6 +1127,17 @@ a:active {
     color: #ce2baa;
 }
 
+.resp-working-time {
+    display: none;
+    width: 27%;
+    position: relative;
+    z-index: 12;
+}
+
+.resp-working-time p {
+    padding: 0;
+}
+
 /*-- Main Navigation --*/
 
 .main-nav {
@@ -1153,6 +1203,120 @@ a:active {
 
 
 /*-- /Main Navigation --*/
+
+
+/*-- Responsive Navigation --*/
+
+.resp-navigation {
+    display: block;
+    /*display: none;*/
+    width: 100%;
+    height: 100%;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+.resp-navigation .scroll {
+    max-height: 80vh;
+    padding: 20px 0 30px 0;
+}
+
+.resp-navigation-header {
+    height: 100px;
+}
+
+.close-resp-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+}
+
+.close-resp-nav {
+    display: block;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    font-family: "PT Sans", Verdana, Arial, sans-serif;
+    font-size: 36px;
+    line-height: 64px;
+    font-weight: bold;
+    color: #b0198f;
+    background: rgba(255, 255, 255, 1);
+    border: 1px dashed #b0198f;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.resp-navigation .col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.resp-navigation .close-resp-box {
+
+}
+
+.resp-navigation .top-nav-box {
+
+}
+
+.resp-navigation .top-nav {
+
+}
+
+.resp-navigation .top-nav li {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.resp-navigation .top-nav li .top-nav-link {
+
+}
+
+.resp-navigation .search-box {
+    margin: 10px 0 0 0;
+}
+
+.resp-navigation .main-nav {
+    display: block;
+    padding: 30px 0;
+    border-top: 1px solid transparent;
+}
+
+.resp-navigation .main-nav-links {
+
+}
+
+.resp-navigation .main-nav-links li {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.resp-navigation .main-nav-links li .main-nav-link {
+    width: 100%;
+    padding: 0 2%;
+}
+
+.resp-navigation .tel-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.resp-navigation .mCSB_scrollTools {
+    position: absolute;
+    width: 5px;
+}
+
+
+/*-- /Responsive Navigation --*/
 
 /*-------------------------------------------*/
 /* ----- CONTENT ------ */
@@ -1546,7 +1710,9 @@ a:active {
 
 .count-price {
     display: block;
-    width: 750px;
+    /*width: 750px;*/
+    width: 90%;
+    max-width: 750px;
     margin: 0 auto;
     padding: 50px 0 60px 0;
     text-align: center;
@@ -2259,6 +2425,19 @@ section.catalog-sect-2 {
     background: rgba(255, 255, 255, .8);
 }
 
+.gallery-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, .8);
+}
+
 .gallery {
     display: block;
     width: 96%;
@@ -2270,6 +2449,7 @@ section.catalog-sect-2 {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 11;
     background: rgba(255, 255, 255, 1);
     -webkit-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, .3);
     -moz-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, .3);
@@ -2291,7 +2471,7 @@ section.catalog-sect-2 {
     position: absolute;
     top: 33px;
     right: 5%;
-    z-index: 2;
+    z-index: 12;
     cursor: pointer;
     text-align: center;
     font-family: "Myriad Pro", Verdana, Arial, sans-serif;

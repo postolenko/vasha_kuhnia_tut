@@ -202,7 +202,7 @@ $(document).ready(function() {
 
                     tabAttr = $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ tabIndex +")").attr("data-tab-num");
 
-                    $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
+                    $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content-num='"+ tabAttr +"']").css({"display" : "block"});
 
                     continue;
 
@@ -216,12 +216,19 @@ $(document).ready(function() {
 
                 tabAttr = $(".tabs:eq("+ tabsIndex  +") .tab:eq("+ 0 +")").attr("data-tab-num");
 
-                $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
+                $(".tabs:eq("+ tabsIndex  +") .tab-content[data-tab-content-num='"+ tabAttr +"']").css({"display" : "block"});
 
-                
             }
 
         }
+
+
+    // --------------------------------------------------
+
+        var tabBox;
+        var tabsRow;
+        var tabParent;
+        var tabsIndex;
 
         $(".tab").click(function() {
 
@@ -231,29 +238,37 @@ $(document).ready(function() {
 
             } else {
 
-                var tabBox = $(this).parent(".tab-box");
+                tabBox = $(this).parent(".tab-box");
 
-                var tabsRow = tabBox.parent(".tabs-row");
+                tabsRow = tabBox.parent(".tabs-row");
 
-                var tabParent = tabsRow.parent(".tabs");
+                tabParent = tabsRow.parent(".tabs");
 
-                tabsRow.css({"outline" : "3px solid red"});
+                tabsIndex = tabParent.index(".tabs");
 
-                var tabsIndex = tabParent.index(this);
-
-                console.log(tabParent.index(this));
-
-                $(".tabs:eq("+ (tabsIndex) +") .tabs-row .tab").removeClass("active");
+                $(".tabs:eq("+ tabsIndex +") .tabs-row .tab").removeClass("active");
 
                 $(this).addClass("active");
 
                 tabAttr = $(this).attr("data-tab-num");
 
-                $(".tab-content").css({"display" : "none"});
+                $(".tabs:eq("+ tabsIndex +") .tab-content").css({"display" : "none"});
 
-                $(".tab-content[data-tab-content='content_"+ tabAttr +"']").css({"display" : "block"});
-
+                $(".tabs:eq("+ tabsIndex +") .tab-content[data-tab-content-num='"+ tabAttr +"']").css({"display" : "block"});
+            
             }
+
+        });
+
+    });
+
+    // ---------------------------------------------------------
+
+    $(function() {
+
+        $(".close-gallery, .gallery-bg").click(function() {
+
+            $(".gallery-section").fadeOut(300);
 
         });
 

@@ -1,19 +1,167 @@
 @media only screen and (max-width: 1280px) {
 
+	.row {
+		padding: 0 1%;
+	}
 
+	/*-- Header --*/
+
+	.working-time {
+	    padding: 9px 0 0 0;
+	}
+
+	.top-nav li {
+		padding: 4px 8px;
+		text-align: center;
+	}
+
+	.main-nav-links li {
+	    padding: 13px 25px;
+	}
+
+	/*-- /Header --*/
 
 }
 
 
 @media only screen and (max-width: 1024px) {
 
+	.row {
+		padding: 0 2%;
+	}
+
+	/*-- Header --*/
+
+	.header-top-row {
+		padding: 15px 0;
+	}
+
+	.top-nav li {
+		width: 49.5%;
+	    padding: 4px 10px 4px 0;
+	    text-align: center;
+	}
+
+	.top-nav li:nth-child(2n + 1) {
+		/*outline: 1px solid blue;*/
+		text-align: right;
+		padding: 4px 14px 4px 0;
+	}
+
+	.top-nav li:nth-child(2n) {
+		/*outline: 1px solid red;*/
+		text-align: left;
+		padding: 4px 0 4px 14px;
+	}
+
+	.tel-icon {
+	    display: none;
+	}
+
+	.top-nav {
+	    text-align: center;
+	    padding: 0;
+	}
+
+	.main-nav-links li {
+	    padding: 28px 15px;
+	}
+
+	.main-nav-link {
+	    font-size: 23px;
+	}
+
+	/*-- /Header --*/
 
 }
 
 
-@media only screen and (max-width: 737px) {
+@media only screen and (max-width: 900px) {
+
+	/*-- Header --*/
+
+	.main-nav-links li {
+	    padding: 28px 11px;
+	}
+
+	.main-nav-link {
+	    font-size: 20px;
+	}
+
+	/*-- /Header --*/
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	/*-- Header --*/
+
+	.respmenu-btn-box {
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+
+	.header-top-row .col-1 {
+		width: 46%;
+	}
+
+	.working-time {
+		display: none;
+	}
+
+	.header-top-row .col-2 {
+	    display: none;
+	}
+
+	.header-top-row .col-3 {
+	    display: none;
+	}
+
+	.resp-working-time {
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+
+	.main-nav {
+	    display: none;
+	}
+
+	/*-- /Header --*/
 
 
+	/*-- Footer --*/
+
+	.footer {
+    	padding: 40px 0 45px 0;
+	}
+
+	.footer .col {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	.vlad-web {
+		float: none;
+		margin: 0 auto;
+	}
+
+	.vlad-web img {
+		display: block;
+		margin: 5px auto;
+		float: none;
+	}
+
+	.vlad-web p {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		float: none;
+	}
+
+
+	/*-- /Footer --*/
 
 }
 
@@ -21,6 +169,27 @@
 
 @media only screen and (max-width: 480px) {
 
+	/*-- Header --*/
 
+	.respmenu-btn-box {
+		width: 29%;
+	}
+
+	.resp-working-time {
+	    display: none;
+	}
+
+	.header-top-row .col-1 {
+		width: 71%;
+	}
+
+	/*-- /Header --*/
+
+
+	/*-- Footer --*/
+
+	
+
+	/*-- /Footer --*/
 
 }
