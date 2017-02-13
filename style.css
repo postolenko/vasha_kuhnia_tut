@@ -358,6 +358,10 @@ a:active {
     border: 1px dotted #b0198f;
 }
 
+.resp-600 {
+    display: none;
+}
+
 .pink-btn {
     display: inline-block;
     vertical-align: top;
@@ -737,8 +741,12 @@ a:active {
     padding: 60px 0 0 0;
 }
 
+.breadcrumb-section + section {
+    padding-top: 10px;
+}
+
 .breadcrumbs {
-    padding: 0 0 14px 0;
+    padding: 0 0 10px 0;
     text-align: center;
 }
 
@@ -881,9 +889,6 @@ a:active {
     top: 0;
     left: 0;
     z-index: 10;
-    -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .3);
-    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, .3);
 }
 
 .respmenu-btn-box {
@@ -1416,7 +1421,7 @@ a:active {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 11;
+    z-index: 10000;
 }
 
 .header-resp-navigation {
@@ -1426,14 +1431,16 @@ a:active {
 .header-resp-navigation .close-nav {
     display: inline-block;
     vertical-align: middle;
-    width: 22%;
+    /*width: 22%;*/
+    width: 16%;
 }
 
 .header-resp-navigation .col-1 {
     display: inline-block;
     vertical-align: middle;
     width: 56%;
-    text-align: right;
+    /*text-align: right;*/
+    text-align: center;
 }
 
 .header-resp-navigation .logo-box {
@@ -3267,6 +3274,7 @@ section.contacts-map-section {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    opacity: .8;
 }
 
 .big_photo_slider .bx-wrapper .bx-viewport {
@@ -3278,6 +3286,10 @@ section.contacts-map-section {
 
 .photo_miniatures_slider .miniature-box.active {
     border: 1px solid #b0198f;
+}
+
+.photo_miniatures_slider .miniature-box.active .miniature-img {
+    opacity: 1;
 }
 
 .product-slider-box .col-1 .bx-wrapper {
@@ -3323,7 +3335,8 @@ section.contacts-map-section {
     float: left;
     /*width: 16.66%;*/
     width: 140px;
-    height: 175px;
+    /*height: 175px;*/
+    height: 180px;
     /*height: auto;*/
     position: relative;
     overflow: hidden;
