@@ -309,13 +309,83 @@
 
 @media only screen and (max-width: 600px) {
 
+	.respmenubtn {
+	    width: 50px;
+	    height: 50px;
+	    padding-top: 4px;
+	}
+
+	.respmenubtn span {
+	    width: 30px;
+	    height: 3px;
+	    margin: 0 auto 4px auto;
+	}
+
+	.respmenubtn span:nth-child(2) {
+		width: 30px;
+		margin: 0px auto 4px auto;
+	}
+
+	.respmenubtn-active span {
+	    width: 33px !important;
+	    top: -3px;
+	    left: 0;
+	}
+
+	.respmenubtn-active span:first-child {
+	    margin: 4px 0 0 0;
+	    top: 0;
+	    left: 8px;
+	}
+
+	.respmenubtn-active span {
+	    width: 33px !important;
+	    top: -3px;
+	    left: 0;
+}
+
+	.header-resp-navigation .col-1 {
+	    width: 78%;
+	}
+
+	.header-resp-navigation .logo-box {
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+
+	.header-resp-navigation .tel-link-p {
+		display: none;
+	}
+
+	.header-resp-navigation .col-2 {
+		display: none;
+	}
+
+	.two-cols-atr-sect {
+	    padding: 80px 0 20px 0;
+	}
+
 	.two-cols-atr.designer .left {
 	    display: none;
+	}
+
+	.sect-6-m-p {
+	    padding: 50px 0 45px 0;
 	}
 
 }
 
 @media only screen and (max-width: 480px) {
+
+	.resp-center {
+		text-align: center;
+	}
+
+	h2 {
+	    padding: 0 0 20px 0;
+	    font-size: 36px;
+	    line-height: 37px;
+	}
 
 	/*-- Header --*/
 
@@ -338,17 +408,37 @@
 	    padding-right: 0;
 	}
 
+	.promo-slider {
+		height: 300px;
+	}
+
+	.slick-dots {
+	    padding: 6px 0;
+	}
+
+	.advantage-sect {
+	    padding: 45px 0 30px 0;
+	}
+
 	.advantage-thumbnails .thumbnail {
 	    width: 50%;
 	    padding: 10px 0;
 	}
 
+	.circle-h-box {
+	    margin: 0 0 55px 0;
+	}
+
+	.two-cols-photo {
+		padding: 30px 0 0 0;
+	}
+
 	.two-cols-photo .thumb-photo.big-photo {
-	    height: 555px;
+	    height: 405px;
 	}
 
 	.two-cols-photo .thumb-photo.big-photo .img-box {
-	    height: 450px;
+	    height: 300px;
 	}
 
 	.two-cols-photo .col-2 .thumb-photo {
@@ -373,6 +463,23 @@
 	    margin: 4px 0;
 	    font-size: 14px;
 	    line-height: 21px;
+	}
+
+	.pagination li .pagination-link {
+		border: 1px solid transparent!important;
+		background: transparent !important;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.pagination li .pagination-arrow {
+		display: none;
+	}
+
+	.pagination li .pagination-link:hover,
+	.pagination li .pagination-link.active,
+	.pagination li .pagination-link:active {
+	    color: #b0198f;
 	}
 
 	/*-- Footer --*/

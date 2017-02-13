@@ -22,10 +22,13 @@
 
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">
 
+	<link rel="stylesheet" href="vendors/css/jquery.mCustomScrollbar.css">
 
 	<script type="text/javascript" src="vendors/js/jquery.js"></script>
 
 	<script type="text/javascript" src="slick/slick.js"></script>
+
+	<script src="vendors/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
 
 	<script type="text/javascript" src="vendors/js/wow.min.js"></script>
@@ -158,57 +161,95 @@
 				
 			<div class="row">
 
-				<div class="scroll">
+				<div class="header-resp-navigation offset-ziro">
 
-					<div class="top-nav-box">
-							
-						<ul class="top-nav offset-ziro">
+					<div class="close-nav">
+						
+						<button type="button" class="respmenubtn respmenubtn-active">
 
-							<li><a href="#" class="top-nav-link">Наши салоны</a></li>
-							<li><a href="#" class="top-nav-link">Доставка и оплата</a></li>
-							<li><a href="#" class="top-nav-link">Акции</a></li>
-							<li><a href="#" class="top-nav-link">Контакты</a></li>
+							<span></span>
+							<span></span>
+							<span></span>
 
-						</ul>
+						</button>
 
 					</div>
 
-					<div class="search-box">
+					<div class="col col-1">
 						
-						<div class="search-form offset-ziro">
-							
-							<form>
+						<a class="logo-box">
+
+							<img class="logo-img" src="img/logo.png" >
+
+						</a>
+
+						<p class="tel-link-p"><i class="tel-icon"></i><a href="#" class="tel-link">+7 4922 44-65-58</a></p>
+
+					</div>
+
+					<div class="col col-2">
+						
+						<button type="button" class="pink-btn">Заказать звонок</button>
+
+					</div>
+
+				</div>
+
+				<div class="scroll">
+
+					<div class="scroll-box">
+
+						<div class="top-nav-box">
 								
-								<input type="text" name="" placeholder="Поиск по сайту">
+							<ul class="top-nav offset-ziro">
 
-								<button type="button" class="search-btn"><i class="search-icon"></i><i class="search-icon_hover"></i></button>
+								<li><a href="#" class="top-nav-link">Наши салоны</a></li>
+								<li><a href="#" class="top-nav-link">Доставка и оплата</a></li>
+								<li><a href="#" class="top-nav-link">Акции</a></li>
+								<li><a href="#" class="top-nav-link">Контакты</a></li>
 
-							</form>
+							</ul>
 
 						</div>
 
-					</div>
+						<div class="search-box">
+							
+							<div class="search-form offset-ziro">
+								
+								<form>
+									
+									<input type="text" name="" placeholder="Поиск по сайту">
 
-					<div class="main-nav">
+									<button type="button" class="search-btn"><i class="search-icon"></i><i class="search-icon_hover"></i></button>
 
-						<ul class="main-nav-links offset-ziro">
+								</form>
 
-							<li><a href="#" class="main-nav-link">Кухни</a></li>
-							<li><a href="#" class="main-nav-link">Оснащение кухни</a></li>
-							<li><a href="#" class="main-nav-link">Мойки и смесители</a></li>
-							<li><a href="#" class="main-nav-link">Техника</a></li>
-							<li><a href="#" class="main-nav-link">Аксессуары</a></li>
-							<li><a href="#" class="main-nav-link">Акции</a></li>
+							</div>
 
-						</ul>
+						</div>
 
-					</div>
+						<div class="main-nav">
 
-					<div class="align-center">
-						
-						<p class="tel-link-p"><i class="tel-icon"></i><a href="#" class="tel-link">+7 4922 44-65-58</a></p>
+							<ul class="main-nav-links offset-ziro">
 
-						<button type="button" class="pink-btn">Заказать звонок</button>
+								<li><a href="#" class="main-nav-link">Кухни</a></li>
+								<li><a href="#" class="main-nav-link">Оснащение кухни</a></li>
+								<li><a href="#" class="main-nav-link">Мойки и смесители</a></li>
+								<li><a href="#" class="main-nav-link">Техника</a></li>
+								<li><a href="#" class="main-nav-link">Аксессуары</a></li>
+								<li><a href="#" class="main-nav-link">Акции</a></li>
+
+							</ul>
+
+						</div>
+
+						<div class="align-center">
+							
+							<p class="tel-link-p"><i class="tel-icon"></i><a href="#" class="tel-link">+7 4922 44-65-58</a></p>
+
+							<button type="button" class="pink-btn">Заказать звонок</button>
+
+						</div>
 
 					</div>
 
@@ -217,6 +258,7 @@
 			</div>
 
 		</div>
+
 								
 	</header>
 
@@ -247,7 +289,7 @@
 						
 					<div class="row">
 
-						<h2>Класические кухни</h2>
+						<h2 class="resp-center">Класические кухни</h2>
 
 						<ul class="sort-links">
 
@@ -553,6 +595,23 @@
 
 						</ul>
 
+						<ul class="resp-pagination">	
+
+							<!-- <li><a href="#" class="pagination-link">1</a></li>
+							<li><a href="#" class="pagination-link active">2</a></li>
+							<li><a href="#" class="pagination-link">3</a></li>
+							<li><a href="#" class="pagination-link">4</a></li>
+
+							<br > -->
+
+							<li><a href="#" class="pagination-link pagination-arrow first-arrow"></a></li>
+							<li><a href="#" class="pagination-link pagination-arrow prev-arrov"></a></li>
+							
+							<li><a href="#" class="pagination-link pagination-arrow next-arrov"></a></li>
+							<li><a href="#" class="pagination-link pagination-arrow last-arrow"></a></li>
+
+						</ul>
+
 					</div>
 
 				</section>
@@ -624,6 +683,16 @@
 
 
 		<script>
+
+			(function($){
+
+				$(window).on("load",function(){
+					
+					$(".scroll").mCustomScrollbar();
+
+				});
+
+			})(jQuery);
 			
 			$(".promo-slider").slick({
 				fade: true,
