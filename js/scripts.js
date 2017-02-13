@@ -34,6 +34,7 @@ $(document).ready(function() {
 
     getPromoSlideImgSize();
 
+    getContactsSliderPosition();
 
     $(window).resize(function() {
 
@@ -46,7 +47,10 @@ $(document).ready(function() {
 
         getScrollHeaderPosition();
 
+        getContactsSliderPosition();
+
         bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+
 
     });
 
@@ -194,8 +198,6 @@ $(document).ready(function() {
 
         var tabsCont = $(".tabs").length - 1;
 
-        console.log(tabsCont);
-
         var tabsIndex = 0;
 
         var tabCount;
@@ -306,41 +308,34 @@ $(document).ready(function() {
 
     })
 
-    // ---------------------------------------------------------
-
-    $(function() {
-
-        $(".contacts-slider-box").css({"top" : ( $(".map-box.contacts-page").height() - $(".contacts-slider-box").height() ) / 2 + "px"});
-
-    });
-
     // --------------------------------------------------------
 
     $(".respmenubtn").click(function() {
 
         if( $(".resp-navigation").is(":hidden") ) {
 
-            // $(this).addClass("respmenubtn-active");
-
             $(".resp-navigation").fadeIn(200);
-
-            // $(".resp-navigation").css({"top" : $(".header-top-row").outerHeight(true) + "px",
-            //                     "height" : ( $(window).height() - $(".header-top-row").outerHeight(true) ) + "px" });
-
-            // $(".header").addClass("fixed");
 
         } else if( $(".resp-navigation").is(":visible") ){
 
-            // $(this).removeClass("respmenubtn-active");
-
             $(".resp-navigation").fadeOut(200);
-
-            // $(".header").removeClass("fixed");
 
         }
 
 
     });
+
+    // ---------------------------------------------------------
+
+    function getContactsSliderPosition() {
+
+        if(bodyWidth > 768) {
+
+            $(".contacts-slider-box").css({"top" : ( $(".map-box.contacts-page").height() - $(".contacts-slider-box").height() ) / 2 + "px"});
+
+        }
+
+    }
 
     // ---------------------------------------------------------
 
