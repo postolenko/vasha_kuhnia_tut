@@ -1,17 +1,5 @@
 $(document).ready(function() {
 
-    //   preload
-    // $(window).on('load', function () {
-
-    //     setTimeout(function() {
-
-    //         $(".preload-bg").fadeOut(500);
-
-    //     }, 700);
-  
-
-    // });
-
     var w = window,
     d = document,
     e = d.documentElement,
@@ -32,16 +20,56 @@ $(document).ready(function() {
     var promoWidthImg;
     var promoHeightImg;
 
+    // -----------------------------------------------------------
+
+    var idexSheme;
+    var parentScheme;
+    var indexChooseBox;
+
+    var regSize;
+    var sizeInputVal;
+
+    // ------------------------------------------------------------
+
+    var accordeonIndex;
+    var accordeonItemCount;
+    var parentAccordeonH;
+
+    // ------------------------------------------------------------
+
+    var tabsCont = $(".tabs").length - 1;
+    var tabsIndex = 0;
+    var tabCount;
+    var tabIndex;
+    var tabAttr;
+    var activeTab;
+
+    // ------------------------------------------------------------
+
+    var tabBox;
+    var tabsRow;
+    var tabParent;
+    var tabsIndex;
+
+    // ------------------------------------------------------------
+
     getPromoSlideImgSize();
 
     getContactsSliderPosition();
 
-    $(window).resize(function() {
+    getPopupPosition();
 
+    // ------------------------------------------------------------
+
+    $(window).resize(function() {
 
         $(".wrapper").css({"min-height" : $(window).height() + "px"});
 
         $(".wrapper").css({"padding-bottom" :  $(".footer").outerHeight(true) + "px"});
+
+        // ------------------------------------------------------------
+
+        bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
 
         getPromoSlideImgSize();
 
@@ -49,8 +77,7 @@ $(document).ready(function() {
 
         getContactsSliderPosition();
 
-        bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
-
+        getPopupPosition();
 
     });
 
@@ -85,10 +112,9 @@ $(document).ready(function() {
 
     $(function() {
 
-        // var idexSizeBox;
-        var idexSheme;
-        var parentScheme;
-        var indexChooseBox;
+        // var idexSheme;
+        // var parentScheme;
+        // var indexChooseBox;
 
         $(".kitchen-sheme .radio-btn").click( function() {
 
@@ -107,8 +133,8 @@ $(document).ready(function() {
         });
 
 
-        var regSize;
-        var sizeInputVal;
+        // var regSize;
+        // var sizeInputVal;
 
 
         $(".size-inpt").keyup(function() {
@@ -141,8 +167,6 @@ $(document).ready(function() {
 
             && hide_element.has(e.target).length === 0) {
 
-            // hide_element.fadeOut(300);
-
             $(".size-inpt").removeClass("active");
         }
 
@@ -152,11 +176,11 @@ $(document).ready(function() {
 
     $(function() {
 
-        var accordeonIndex;
+        // var accordeonIndex;
 
         accordeonItemCount = $(".accordeon-item").length - 1;
 
-        var parentAccordeonH;
+        // var parentAccordeonH;
 
         $(".accordeon-item-h").click(function() {
 
@@ -196,18 +220,16 @@ $(document).ready(function() {
 
     $(function() {
 
-        var tabsCont = $(".tabs").length - 1;
+        tabsCont = $(".tabs").length - 1;
 
-        var tabsIndex = 0;
+        tabsIndex = 0;
 
-        var tabCount;
-        var tabIndex;
+        // var tabCount;
+        // var tabIndex;
 
-        var tabAttr;
+        // var tabAttr;
 
-        var activeTab;
-
-        // var tabContent;
+        // var activeTab;
 
         for(tabsIndex = 0; tabsIndex <= tabsCont; tabsIndex++) {
 
@@ -246,10 +268,10 @@ $(document).ready(function() {
 
     // --------------------------------------------------
 
-        var tabBox;
-        var tabsRow;
-        var tabParent;
-        var tabsIndex;
+        // var tabBox;
+        // var tabsRow;
+        // var tabParent;
+        // var tabsIndex;
 
         $(".tab").click(function() {
 
@@ -287,6 +309,35 @@ $(document).ready(function() {
 
     $(function() {
 
+        $(".show-popup").click(function() {
+
+            if( $(this).hasClass("show-count-popup") ) {
+
+                $(".popup-sect").fadeIn(400);
+
+                $(".count-popup").fadeIn(400);
+
+            }
+
+            getPopupPosition();
+
+        });
+
+
+        $(".close-popup, .popup-bg").click(function() {
+
+            $(".popup-sect").fadeOut(500);
+
+            $(".popup").fadeOut(500);
+
+        });
+
+    });
+
+    // ---------------------------------------------------------
+
+    $(function() {
+
         $(".close-gallery, .gallery-bg").click(function() {
 
             $(".gallery-section").fadeOut(300);
@@ -310,18 +361,22 @@ $(document).ready(function() {
 
     // --------------------------------------------------------
 
-    $(".respmenubtn").click(function() {
+    $(function() {
 
-        if( $(".resp-navigation").is(":hidden") ) {
+        $(".respmenubtn").click(function() {
 
-            $(".resp-navigation").fadeIn(200);
+            if( $(".resp-navigation").is(":hidden") ) {
 
-        } else if( $(".resp-navigation").is(":visible") ){
+                $(".resp-navigation").fadeIn(200);
 
-            $(".resp-navigation").fadeOut(200);
+            } else if( $(".resp-navigation").is(":visible") ){
 
-        }
+                $(".resp-navigation").fadeOut(200);
 
+            }
+
+
+        });
 
     });
 
@@ -334,6 +389,18 @@ $(document).ready(function() {
             $(".contacts-slider-box").css({"top" : ( $(".map-box.contacts-page").height() - $(".contacts-slider-box").height() ) / 2 + "px"});
 
         }
+
+    }
+
+    // ---------------------------------------------------------
+
+    function getPopupPosition() {
+
+        $(".popup").css({
+                        "left" : ( $(window).width() - $(".popup").outerWidth(true) ) / 2 + "px",
+                        "top" : ( $(window).height() - $(".popup").outerHeight(true) ) / 2 + "px"
+                         });
+       
 
     }
 
@@ -355,69 +422,69 @@ $(document).ready(function() {
 
     // ---------------------------------------------------------
 
-        function getPromoSlideImgSize() {
+    function getPromoSlideImgSize() {
 
-            clearTimeout(positionInterval);
+        clearTimeout(positionInterval);
 
-            // var promoSlideCount = $(".promo-slide").length - 1;
+        // var promoSlideCount = $(".promo-slide").length - 1;
 
-            // var promoSlideCountIndex;
+        // var promoSlideCountIndex;
 
-            // var promoSlideWidth;
-            // var promoSlideHeight;
+        // var promoSlideWidth;
+        // var promoSlideHeight;
 
-            // var promoWidthImg;
-            // var promoHeightImg;
+        // var promoWidthImg;
+        // var promoHeightImg;
 
-            promoSlideCount = $(".promo-slide").length - 1;
+        promoSlideCount = $(".promo-slide").length - 1;
 
-            promoSlideCountIndex;
+        promoSlideCountIndex;
 
-            promoSlideWidth;
-            promoSlideHeight;
+        promoSlideWidth;
+        promoSlideHeight;
 
-            promoWidthImg;
-            promoHeightImg;
+        promoWidthImg;
+        promoHeightImg;
 
-            positionInterval = setTimeout(function() {
+        positionInterval = setTimeout(function() {
 
 
-                for( promoSlideCountIndex = 0; promoSlideCountIndex <= promoSlideCount; promoSlideCountIndex++ ) {
+            for( promoSlideCountIndex = 0; promoSlideCountIndex <= promoSlideCount; promoSlideCountIndex++ ) {
 
-                    promoSlideWidth = $(".promo-slide:eq("+ promoSlideCountIndex +")").outerWidth();
+                promoSlideWidth = $(".promo-slide:eq("+ promoSlideCountIndex +")").outerWidth();
 
-                    promoSlideHeight = $(".promo-slide:eq("+ promoSlideCountIndex +")").outerHeight();
+                promoSlideHeight = $(".promo-slide:eq("+ promoSlideCountIndex +")").outerHeight();
 
-                    promoWidthImg = $(".promo-slide:eq("+ promoSlideCountIndex +") img").outerWidth();
+                promoWidthImg = $(".promo-slide:eq("+ promoSlideCountIndex +") img").outerWidth();
 
-                    promoHeightImg = $(".promo-slide:eq("+ promoSlideCountIndex +") img").outerHeight();
+                promoHeightImg = $(".promo-slide:eq("+ promoSlideCountIndex +") img").outerHeight();
 
-                    if( promoHeightImg < promoSlideHeight || promoWidthImg < promoSlideWidth ) {
+                if( promoHeightImg < promoSlideHeight || promoWidthImg < promoSlideWidth ) {
 
-                        $(".promo-slide:eq("+ promoSlideCountIndex  +") img").css({
-                            "min-width" : promoSlideWidth + "px",
-                            "min-height" : promoSlideHeight + "px",
-                            "height" : "auto"
-                        });
-
-                    }
-
-                    if( promoWidthImg > promoSlideWidth ) {
-
-                        $(".promo-slide:eq("+ promoSlideCountIndex +") img").css({
-
-                            "margin-left" : -( ( promoWidthImg - promoSlideWidth ) / 2 ) + "px"
-
-                        });
-
-                    }
-
+                    $(".promo-slide:eq("+ promoSlideCountIndex  +") img").css({
+                        "min-width" : promoSlideWidth + "px",
+                        "min-height" : promoSlideHeight + "px",
+                        "height" : "auto"
+                    });
 
                 }
 
-            }, 500);                   
+                if( promoWidthImg > promoSlideWidth ) {
 
-        }
+                    $(".promo-slide:eq("+ promoSlideCountIndex +") img").css({
+
+                        "margin-left" : -( ( promoWidthImg - promoSlideWidth ) / 2 ) + "px"
+
+                    });
+
+                }
+
+
+            }
+
+        }, 500);                   
+
+    }
 
 
 });

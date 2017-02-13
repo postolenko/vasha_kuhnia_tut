@@ -136,7 +136,7 @@
 .bx-wrapper .bx-next {
 	/*right: 10px;*/
 	opacity: .8;
-	right: 11px;
+	right: 10px;
 	/*background: url(images/controls.png) no-repeat -43px -32px;*/
 	background-image: url(images/bx_slider_arrows.png);
 	background-repeat: no-repeat;
